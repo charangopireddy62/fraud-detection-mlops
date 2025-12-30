@@ -1,0 +1,41 @@
+dataset: transactions
+description: Weekly transaction data for fraud detection
+
+columns:
+  - name: transaction_id
+    type: string
+    nullable: false
+    unique: true
+
+  - name: user_id
+    type: string
+    nullable: false
+
+  - name: amount
+    type: float
+    nullable: false
+    min: 0.0
+
+  - name: currency
+    type: string
+    nullable: false
+    allowed_values: ["INR", "USD"]
+
+  - name: device_type
+    type: string
+    nullable: false
+    allowed_values: ["mobile", "web"]
+
+  - name: geo_country
+    type: string
+    nullable: false
+    length: 2
+
+  - name: timestamp
+    type: timestamp
+    nullable: false
+
+  - name: is_fraud
+    type: integer
+    nullable: false
+    allowed_values: [0, 1]
